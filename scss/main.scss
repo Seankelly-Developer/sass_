@@ -1,6 +1,31 @@
+@import "../node_modules/bootstrap/scss/functions";
+
 $danger: rgb(210, 23, 67);
-$light: rgb(25, 255, 205);
+$light: rgb(255, 255, 255);
+
+// Globals
+$enable-rounded: false;
+$enable-shadows: true;
+$enable-gradients: true;
+
+// Theme colours
+$primary: rgb(62, 255, 18);
 
 
+//Import mixins and variables
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/mixins";
 
-@import "../node_modules/bootstrap/scss/bootstrap.scss"
+
+//Custom colours
+
+$custom-colors: (
+    "primary-light": rgba(255, 255, 255, 0.591),
+    "secondary-light": rgba(255, 255, 255, 0.774),
+);
+
+//Merge colours with the theme
+$theme-colors: map-merge($theme-colors , $custom-colors );
+
+//Import bootstrap
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
